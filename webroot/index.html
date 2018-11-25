@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="app">
+  <v-app id="helloworld">
+
+    <!-- HEADER -->
+    <v-toolbar color="purple" dark fixed app>
+      <v-toolbar-title>Build Automat</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-img src="static/logo.jpg" max-height="50" max-width="150" align="right"/>
+    </v-toolbar>
+
+    <v-content>
+      <v-container fluid fill-height>
+        <v-layout justify-center  align-center>
+
+            <v-card color="indigo" class="white--text">
+  <v-form v-model="valid">
+    <v-text-field
+      label="Name"
+      v-model="name"
+      :rules="nameRules"
+      :counter="10"
+      required
+    ></v-text-field>
+              {{ message }}
+            </v-card>
+
+        </v-layout>
+      </v-container>
+    </v-content>
+  </v-app>
+</div>
+
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    })
+  </script>
+</body>
+</html>
